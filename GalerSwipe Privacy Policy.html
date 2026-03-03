@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalerSwipe — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0c0a1a;
+            --surface: rgba(255,255,255,0.04);
+            --surface-hover: rgba(255,255,255,0.08);
+            --border: rgba(255,255,255,0.08);
+            --text: #e2dff0;
+            --text-muted: #9590ab;
+            --accent-1: #6c5ce7;
+            --accent-2: #a855f7;
+            --accent-3: #ec4899;
+            --gradient: linear-gradient(135deg, #6c5ce7, #a855f7, #ec4899);
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -40%;
+            left: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(108,92,231,0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%;
+            right: -20%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(ellipse, rgba(236,72,153,0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 20px rgba(108,92,231,0.3);
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+
+        .header .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.85rem;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .lang-btn:hover {
+            background: var(--surface-hover);
+            color: var(--text);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .lang-btn.active {
+            background: var(--gradient);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 2px 12px rgba(108,92,231,0.3);
+        }
+
+        /* Content */
+        .policy-content {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .policy-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .policy-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .policy-content p {
+            color: var(--text);
+            font-size: 0.92rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .policy-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.8rem;
+        }
+
+        .policy-content ul li {
+            position: relative;
+            padding-left: 1.4rem;
+            font-size: 0.92rem;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+        }
+
+        .policy-content ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-2);
+            opacity: 0.7;
+        }
+
+        .effective-date {
+            display: inline-block;
+            background: rgba(168,85,247,0.1);
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 8px;
+            padding: 0.35rem 0.8rem;
+            font-size: 0.82rem;
+            color: var(--accent-2);
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-box {
+            background: rgba(108,92,231,0.08);
+            border: 1px solid rgba(108,92,231,0.15);
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .contact-box a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-box a:hover {
+            color: var(--accent-3);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1rem 3rem; }
+            .header h1 { font-size: 1.6rem; }
+            .policy-content { padding: 1.8rem 1.3rem; }
+            .lang-btn { font-size: 0.76rem; padding: 0.35rem 0.7rem; }
+        }
+
+        /* Fade in */
+        .policy-content, .lang-switcher { animation: fadeUp 0.6s ease both; }
+        .lang-switcher { animation-delay: 0.1s; }
+        .policy-content { animation-delay: 0.2s; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">📸</div>
+                <span class="logo-text">GalerSwipe</span>
+            </div>
+            <h1 id="page-title">Privacy Policy</h1>
+            <p class="subtitle" id="page-subtitle">Your privacy matters to us</p>
+        </div>
+
+        <div class="lang-switcher" id="langSwitcher"></div>
+
+        <div class="policy-content" id="policyContent"></div>
+
+        <div class="footer">
+            © 2025 GalerSwipe. All rights reserved.
+        </div>
+    </div>
+
+<script>
+const POLICIES = {
+    en: {
+        flag: "🇬🇧", label: "English",
+        title: "Privacy Policy",
+        subtitle: "Your privacy matters to us",
+        effective: "Effective Date: March 2025",
+        sections: [
+            { heading: "Introduction", body: `<p>GalerSwipe ("we", "our", "us") is a photo gallery management app designed to help you organize your photos quickly and intuitively. This Privacy Policy explains how we collect, use, and protect your information when you use our app.</p>` },
+            { heading: "Information We Collect", body: `
+                <p><strong>Photos & Media:</strong> GalerSwipe accesses your device's photo library solely to display, organize, and manage your photos. Your photos are processed entirely on your device and are never uploaded to our servers.</p>
+                <p><strong>Face ID / Biometric Data:</strong> If you enable the locked folder feature, Face ID or device passcode is used for authentication. Biometric data is handled entirely by Apple's frameworks and is never accessed or stored by us.</p>
+                <p><strong>Location Data:</strong> If you grant permission, we may access photo metadata (including location) to display map-based features. This data remains on your device.</p>
+                <p><strong>Usage Analytics:</strong> We collect anonymous usage statistics (e.g., number of photos swiped, features used) to improve the app experience. This data cannot be used to identify you personally.</p>
+                <p><strong>Advertising Data:</strong> For free users, we use Google AdMob to display ads. AdMob may collect device identifiers and usage data in accordance with Google's privacy policy. You will be asked for consent via the App Tracking Transparency prompt before any tracking occurs.</p>
+                <p><strong>Purchase Information:</strong> Subscription and purchase transactions are processed entirely by Apple through the App Store. We do not collect or store your payment information.</p>` },
+            { heading: "How We Use Your Information", body: `<ul>
+                <li>To provide and improve core app functionality (photo organization, duplicate detection, swipe management)</li>
+                <li>To display personalized or contextual advertisements (free tier)</li>
+                <li>To generate anonymous usage statistics for app improvement</li>
+                <li>To process your subscription status</li></ul>` },
+            { heading: "Data Storage & Security", body: `<p>All photo processing, including AI-powered duplicate detection, happens locally on your device. We do not operate servers that store your personal photos or biometric data. Any anonymous analytics data is stored securely and transmitted using industry-standard encryption.</p>` },
+            { heading: "Third-Party Services", body: `<p>We integrate the following third-party services:</p><ul>
+                <li><strong>Google AdMob:</strong> Advertising for free users</li>
+                <li><strong>Apple StoreKit:</strong> In-app purchases and subscriptions</li></ul>
+                <p>Each third-party service operates under its own privacy policy.</p>` },
+            { heading: "Your Rights", body: `<p>You can revoke photo library access, location access, or tracking permissions at any time through your device's Settings. Deleting the app removes all locally stored data. If you are located in the EU, you have additional rights under GDPR, including the right to access, correct, or delete your data.</p>` },
+            { heading: "Children's Privacy", body: `<p>GalerSwipe is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us so we can take appropriate action.</p>` },
+            { heading: "Changes to This Policy", body: `<p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically.</p>` },
+            { heading: "Contact Us", body: `<div class="contact-box"><p>If you have any questions or concerns about this Privacy Policy, please contact us at:<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    tr: {
+        flag: "🇹🇷", label: "Türkçe",
+        title: "Gizlilik Politikası",
+        subtitle: "Gizliliğiniz bizim için önemlidir",
+        effective: "Yürürlük Tarihi: Mart 2025",
+        sections: [
+            { heading: "Giriş", body: `<p>GalerSwipe ("biz"), fotoğraflarınızı hızlı ve sezgisel bir şekilde düzenlemenize yardımcı olmak için tasarlanmış bir fotoğraf galerisi yönetim uygulamasıdır. Bu Gizlilik Politikası, uygulamamızı kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.</p>` },
+            { heading: "Topladığımız Bilgiler", body: `
+                <p><strong>Fotoğraflar ve Medya:</strong> GalerSwipe, fotoğraflarınızı görüntülemek, düzenlemek ve yönetmek için cihazınızın fotoğraf kitaplığına erişir. Fotoğraflarınız tamamen cihazınızda işlenir ve asla sunucularımıza yüklenmez.</p>
+                <p><strong>Face ID / Biyometrik Veriler:</strong> Kilitli klasör özelliğini etkinleştirirseniz, kimlik doğrulama için Face ID veya cihaz parolası kullanılır. Biyometrik veriler tamamen Apple'ın çerçeveleri tarafından yönetilir ve tarafımızca erişilmez veya saklanmaz.</p>
+                <p><strong>Konum Verileri:</strong> İzin verirseniz, harita tabanlı özellikleri görüntülemek için fotoğraf meta verilerine (konum dahil) erişebiliriz. Bu veriler cihazınızda kalır.</p>
+                <p><strong>Kullanım Analitiği:</strong> Uygulama deneyimini iyileştirmek için anonim kullanım istatistikleri toplarız (ör. kaydırılan fotoğraf sayısı, kullanılan özellikler). Bu veriler sizi kişisel olarak tanımlamak için kullanılamaz.</p>
+                <p><strong>Reklam Verileri:</strong> Ücretsiz kullanıcılar için reklamları görüntülemek amacıyla Google AdMob kullanıyoruz. AdMob, Google'ın gizlilik politikasına uygun olarak cihaz tanımlayıcıları ve kullanım verilerini toplayabilir. Herhangi bir izleme gerçekleşmeden önce Uygulama İzleme Şeffaflığı aracılığıyla onayınız istenecektir.</p>
+                <p><strong>Satın Alma Bilgileri:</strong> Abonelik ve satın alma işlemleri tamamen Apple tarafından App Store üzerinden gerçekleştirilir. Ödeme bilgilerinizi toplamaz veya saklamayız.</p>` },
+            { heading: "Bilgilerinizi Nasıl Kullanıyoruz", body: `<ul>
+                <li>Temel uygulama işlevselliğini sağlamak ve iyileştirmek (fotoğraf düzenleme, kopya algılama, kaydırma yönetimi)</li>
+                <li>Kişiselleştirilmiş veya bağlamsal reklamlar görüntülemek (ücretsiz katman)</li>
+                <li>Uygulama iyileştirmesi için anonim kullanım istatistikleri oluşturmak</li>
+                <li>Abonelik durumunuzu işlemek</li></ul>` },
+            { heading: "Veri Depolama ve Güvenlik", body: `<p>Yapay zeka destekli kopya algılama dahil tüm fotoğraf işleme, cihazınızda yerel olarak gerçekleşir. Kişisel fotoğraflarınızı veya biyometrik verilerinizi depolayan sunucular işletmiyoruz. Anonim analitik verileri güvenli bir şekilde saklanır ve endüstri standardı şifreleme kullanılarak iletilir.</p>` },
+            { heading: "Üçüncü Taraf Hizmetleri", body: `<p>Aşağıdaki üçüncü taraf hizmetleri entegre ediyoruz:</p><ul>
+                <li><strong>Google AdMob:</strong> Ücretsiz kullanıcılar için reklam</li>
+                <li><strong>Apple StoreKit:</strong> Uygulama içi satın almalar ve abonelikler</li></ul>
+                <p>Her üçüncü taraf hizmeti kendi gizlilik politikası kapsamında çalışır.</p>` },
+            { heading: "Haklarınız", body: `<p>Fotoğraf kitaplığı erişimini, konum erişimini veya izleme izinlerini cihazınızın Ayarlarından istediğiniz zaman iptal edebilirsiniz. Uygulamayı silmek, yerel olarak depolanan tüm verileri kaldırır. AB'de bulunuyorsanız, GDPR kapsamında verilerinize erişme, düzeltme veya silme hakkı dahil ek haklarınız vardır.</p>` },
+            { heading: "Çocukların Gizliliği", body: `<p>GalerSwipe 13 yaşın altındaki çocuklara yönelik değildir. Çocuklardan bilerek kişisel bilgi toplamayız. Bir çocuğun bize kişisel veri sağladığına inanıyorsanız, uygun önlemleri alabilmemiz için lütfen bizimle iletişime geçin.</p>` },
+            { heading: "Bu Politikadaki Değişiklikler", body: `<p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Herhangi bir değişiklik, güncellenmiş yürürlük tarihi ile bu sayfada yayınlanacaktır. Bu politikayı düzenli olarak gözden geçirmenizi öneririz.</p>` },
+            { heading: "Bize Ulaşın", body: `<div class="contact-box"><p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz veya endişeniz varsa, lütfen bizimle iletişime geçin:<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    ar: {
+        flag: "🇸🇦", label: "العربية",
+        title: "سياسة الخصوصية",
+        subtitle: "خصوصيتك تهمنا",
+        effective: "تاريخ السريان: مارس 2025",
+        sections: [
+            { heading: "مقدمة", body: `<p>GalerSwipe ("نحن") هو تطبيق لإدارة معرض الصور مصمم لمساعدتك على تنظيم صورك بسرعة وسهولة. توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها وحمايتها عند استخدام تطبيقنا.</p>` },
+            { heading: "المعلومات التي نجمعها", body: `
+                <p><strong>الصور والوسائط:</strong> يصل GalerSwipe إلى مكتبة الصور في جهازك فقط لعرض صورك وتنظيمها وإدارتها. تتم معالجة صورك بالكامل على جهازك ولا يتم تحميلها أبدًا على خوادمنا.</p>
+                <p><strong>Face ID / البيانات البيومترية:</strong> إذا قمت بتفعيل ميزة المجلد المقفل، يتم استخدام Face ID أو رمز المرور للمصادقة. تتم إدارة البيانات البيومترية بالكامل بواسطة أطر عمل Apple ولا نصل إليها أو نخزنها.</p>
+                <p><strong>بيانات الموقع:</strong> إذا منحت الإذن، قد نصل إلى بيانات الصور الوصفية (بما في ذلك الموقع) لعرض الميزات المستندة إلى الخريطة. تبقى هذه البيانات على جهازك.</p>
+                <p><strong>تحليلات الاستخدام:</strong> نجمع إحصائيات استخدام مجهولة الهوية لتحسين تجربة التطبيق. لا يمكن استخدام هذه البيانات لتحديد هويتك شخصيًا.</p>
+                <p><strong>بيانات الإعلانات:</strong> للمستخدمين المجانيين، نستخدم Google AdMob لعرض الإعلانات. قد يجمع AdMob معرفات الجهاز وبيانات الاستخدام وفقًا لسياسة خصوصية Google. سيُطلب موافقتك عبر شفافية تتبع التطبيقات قبل أي تتبع.</p>
+                <p><strong>معلومات الشراء:</strong> تتم معالجة معاملات الاشتراك والشراء بالكامل بواسطة Apple عبر App Store. لا نجمع أو نخزن معلومات الدفع الخاصة بك.</p>` },
+            { heading: "كيف نستخدم معلوماتك", body: `<ul>
+                <li>لتوفير وتحسين وظائف التطبيق الأساسية (تنظيم الصور، كشف التكرارات، إدارة التمرير)</li>
+                <li>لعرض إعلانات مخصصة أو سياقية (الطبقة المجانية)</li>
+                <li>لإنشاء إحصائيات استخدام مجهولة لتحسين التطبيق</li>
+                <li>لمعالجة حالة اشتراكك</li></ul>` },
+            { heading: "تخزين البيانات والأمان", body: `<p>تتم جميع عمليات معالجة الصور، بما في ذلك الكشف عن التكرارات بالذكاء الاصطناعي، محليًا على جهازك. لا نشغل خوادم تخزن صورك الشخصية أو بياناتك البيومترية. يتم تخزين أي بيانات تحليلية مجهولة الهوية بشكل آمن ونقلها باستخدام تشفير قياسي.</p>` },
+            { heading: "خدمات الطرف الثالث", body: `<p>ندمج خدمات الطرف الثالث التالية:</p><ul>
+                <li><strong>Google AdMob:</strong> الإعلانات للمستخدمين المجانيين</li>
+                <li><strong>Apple StoreKit:</strong> عمليات الشراء داخل التطبيق والاشتراكات</li></ul>
+                <p>تعمل كل خدمة طرف ثالث بموجب سياسة الخصوصية الخاصة بها.</p>` },
+            { heading: "حقوقك", body: `<p>يمكنك إلغاء الوصول إلى مكتبة الصور أو الموقع أو أذونات التتبع في أي وقت من خلال إعدادات جهازك. يؤدي حذف التطبيق إلى إزالة جميع البيانات المخزنة محليًا. إذا كنت في الاتحاد الأوروبي، فلديك حقوق إضافية بموجب GDPR.</p>` },
+            { heading: "خصوصية الأطفال", body: `<p>GalerSwipe غير موجه للأطفال دون سن 13 عامًا. لا نجمع معلومات شخصية من الأطفال عن علم. إذا كنت تعتقد أن طفلاً قد زودنا ببيانات شخصية، يرجى الاتصال بنا.</p>` },
+            { heading: "التغييرات على هذه السياسة", body: `<p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر أي تغييرات على هذه الصفحة مع تاريخ سريان محدث.</p>` },
+            { heading: "اتصل بنا", body: `<div class="contact-box"><p>إذا كانت لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على:<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    de: {
+        flag: "🇩🇪", label: "Deutsch",
+        title: "Datenschutzrichtlinie",
+        subtitle: "Ihre Privatsphäre ist uns wichtig",
+        effective: "Gültig ab: März 2025",
+        sections: [
+            { heading: "Einleitung", body: `<p>GalerSwipe („wir", „uns", „unser") ist eine Fotogalerie-Verwaltungs-App, die Ihnen hilft, Ihre Fotos schnell und intuitiv zu organisieren. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen sammeln, verwenden und schützen, wenn Sie unsere App nutzen.</p>` },
+            { heading: "Informationen, die wir sammeln", body: `
+                <p><strong>Fotos & Medien:</strong> GalerSwipe greift auf die Fotobibliothek Ihres Geräts zu, um Ihre Fotos anzuzeigen, zu organisieren und zu verwalten. Ihre Fotos werden ausschließlich auf Ihrem Gerät verarbeitet und niemals auf unsere Server hochgeladen.</p>
+                <p><strong>Face ID / Biometrische Daten:</strong> Wenn Sie die gesperrte Ordner-Funktion aktivieren, wird Face ID oder der Gerätecode zur Authentifizierung verwendet. Biometrische Daten werden ausschließlich von Apples Frameworks verarbeitet und von uns weder abgerufen noch gespeichert.</p>
+                <p><strong>Standortdaten:</strong> Mit Ihrer Erlaubnis können wir auf Foto-Metadaten (einschließlich Standort) zugreifen, um kartenbasierte Funktionen anzuzeigen. Diese Daten verbleiben auf Ihrem Gerät.</p>
+                <p><strong>Nutzungsanalysen:</strong> Wir sammeln anonyme Nutzungsstatistiken, um die App-Erfahrung zu verbessern. Diese Daten können nicht zur persönlichen Identifizierung verwendet werden.</p>
+                <p><strong>Werbedaten:</strong> Für kostenlose Nutzer verwenden wir Google AdMob zur Anzeige von Werbung. AdMob kann Gerätekennungen und Nutzungsdaten gemäß der Google-Datenschutzrichtlinie sammeln. Ihre Zustimmung wird über App Tracking Transparency eingeholt, bevor ein Tracking stattfindet.</p>
+                <p><strong>Kaufinformationen:</strong> Abonnement- und Kauftransaktionen werden vollständig von Apple über den App Store abgewickelt. Wir sammeln oder speichern Ihre Zahlungsinformationen nicht.</p>` },
+            { heading: "Wie wir Ihre Informationen verwenden", body: `<ul>
+                <li>Bereitstellung und Verbesserung der Kernfunktionalität der App</li>
+                <li>Anzeige personalisierter oder kontextbezogener Werbung (kostenlose Stufe)</li>
+                <li>Erstellung anonymer Nutzungsstatistiken zur App-Verbesserung</li>
+                <li>Verarbeitung Ihres Abonnementstatus</li></ul>` },
+            { heading: "Datenspeicherung & Sicherheit", body: `<p>Alle Fotoverarbeitung, einschließlich KI-gestützter Duplikaterkennung, erfolgt lokal auf Ihrem Gerät. Wir betreiben keine Server, die Ihre persönlichen Fotos oder biometrischen Daten speichern. Anonyme Analysedaten werden sicher gespeichert und mit branchenüblicher Verschlüsselung übertragen.</p>` },
+            { heading: "Drittanbieter-Dienste", body: `<p>Wir integrieren folgende Drittanbieter-Dienste:</p><ul>
+                <li><strong>Google AdMob:</strong> Werbung für kostenlose Nutzer</li>
+                <li><strong>Apple StoreKit:</strong> In-App-Käufe und Abonnements</li></ul>
+                <p>Jeder Drittanbieter-Dienst unterliegt seiner eigenen Datenschutzrichtlinie.</p>` },
+            { heading: "Ihre Rechte", body: `<p>Sie können den Zugriff auf die Fotobibliothek, den Standort oder die Tracking-Berechtigungen jederzeit über die Einstellungen Ihres Geräts widerrufen. Das Löschen der App entfernt alle lokal gespeicherten Daten. Wenn Sie sich in der EU befinden, haben Sie zusätzliche Rechte gemäß der DSGVO, einschließlich des Rechts auf Zugang, Berichtigung oder Löschung Ihrer Daten.</p>` },
+            { heading: "Datenschutz für Kinder", body: `<p>GalerSwipe richtet sich nicht an Kinder unter 13 Jahren. Wir sammeln wissentlich keine persönlichen Daten von Kindern. Wenn Sie glauben, dass ein Kind uns persönliche Daten bereitgestellt hat, kontaktieren Sie uns bitte.</p>` },
+            { heading: "Änderungen dieser Richtlinie", body: `<p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite mit einem aktualisierten Gültigkeitsdatum veröffentlicht.</p>` },
+            { heading: "Kontakt", body: `<div class="contact-box"><p>Bei Fragen zu dieser Datenschutzrichtlinie kontaktieren Sie uns unter:<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    ru: {
+        flag: "🇷🇺", label: "Русский",
+        title: "Политика конфиденциальности",
+        subtitle: "Ваша конфиденциальность важна для нас",
+        effective: "Дата вступления в силу: Март 2025",
+        sections: [
+            { heading: "Введение", body: `<p>GalerSwipe («мы», «наш») — это приложение для управления фотогалереей, предназначенное для быстрой и интуитивной организации ваших фотографий. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем и защищаем вашу информацию при использовании нашего приложения.</p>` },
+            { heading: "Информация, которую мы собираем", body: `
+                <p><strong>Фотографии и медиа:</strong> GalerSwipe получает доступ к фотобиблиотеке вашего устройства исключительно для отображения, организации и управления вашими фотографиями. Ваши фотографии обрабатываются полностью на вашем устройстве и никогда не загружаются на наши серверы.</p>
+                <p><strong>Face ID / Биометрические данные:</strong> При активации функции заблокированной папки для аутентификации используется Face ID или пароль устройства. Биометрические данные обрабатываются исключительно фреймворками Apple и не доступны нам и не хранятся нами.</p>
+                <p><strong>Данные о местоположении:</strong> С вашего разрешения мы можем получить доступ к метаданным фотографий (включая местоположение) для отображения функций на карте. Эти данные остаются на вашем устройстве.</p>
+                <p><strong>Аналитика использования:</strong> Мы собираем анонимную статистику использования для улучшения приложения. Эти данные не могут быть использованы для вашей личной идентификации.</p>
+                <p><strong>Рекламные данные:</strong> Для бесплатных пользователей мы используем Google AdMob для показа рекламы. AdMob может собирать идентификаторы устройства и данные об использовании в соответствии с политикой конфиденциальности Google.</p>
+                <p><strong>Информация о покупках:</strong> Транзакции подписок и покупок обрабатываются полностью Apple через App Store. Мы не собираем и не храним вашу платежную информацию.</p>` },
+            { heading: "Как мы используем вашу информацию", body: `<ul>
+                <li>Для обеспечения и улучшения основных функций приложения</li>
+                <li>Для показа персонализированной или контекстной рекламы (бесплатный уровень)</li>
+                <li>Для создания анонимной статистики использования</li>
+                <li>Для обработки статуса вашей подписки</li></ul>` },
+            { heading: "Хранение данных и безопасность", body: `<p>Вся обработка фотографий, включая обнаружение дубликатов на основе ИИ, происходит локально на вашем устройстве. Мы не используем серверы для хранения ваших личных фотографий или биометрических данных. Любые анонимные аналитические данные надежно хранятся и передаются с использованием стандартного шифрования.</p>` },
+            { heading: "Сторонние сервисы", body: `<p>Мы интегрируем следующие сторонние сервисы:</p><ul>
+                <li><strong>Google AdMob:</strong> Реклама для бесплатных пользователей</li>
+                <li><strong>Apple StoreKit:</strong> Покупки в приложении и подписки</li></ul>
+                <p>Каждый сторонний сервис работает в соответствии со своей собственной политикой конфиденциальности.</p>` },
+            { heading: "Ваши права", body: `<p>Вы можете отозвать доступ к фотобиблиотеке, местоположению или разрешения на отслеживание в любое время через настройки вашего устройства. Удаление приложения удаляет все локально сохраненные данные. Если вы находитесь в ЕС, у вас есть дополнительные права в соответствии с GDPR.</p>` },
+            { heading: "Конфиденциальность детей", body: `<p>GalerSwipe не предназначен для детей младше 13 лет. Мы сознательно не собираем личную информацию от детей. Если вы считаете, что ребенок предоставил нам личные данные, пожалуйста, свяжитесь с нами.</p>` },
+            { heading: "Изменения в этой политике", body: `<p>Мы можем время от времени обновлять эту Политику конфиденциальности. Любые изменения будут опубликованы на этой странице с обновленной датой вступления в силу.</p>` },
+            { heading: "Свяжитесь с нами", body: `<div class="contact-box"><p>Если у вас есть вопросы по этой Политике конфиденциальности, свяжитесь с нами:<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    fr: {
+        flag: "🇫🇷", label: "Français",
+        title: "Politique de Confidentialité",
+        subtitle: "Votre vie privée nous tient à cœur",
+        effective: "Date d'entrée en vigueur : Mars 2025",
+        sections: [
+            { heading: "Introduction", body: `<p>GalerSwipe (« nous », « notre ») est une application de gestion de galerie photo conçue pour vous aider à organiser vos photos rapidement et intuitivement. Cette Politique de Confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application.</p>` },
+            { heading: "Informations que nous collectons", body: `
+                <p><strong>Photos et médias :</strong> GalerSwipe accède à la photothèque de votre appareil uniquement pour afficher, organiser et gérer vos photos. Vos photos sont traitées entièrement sur votre appareil et ne sont jamais téléchargées sur nos serveurs.</p>
+                <p><strong>Face ID / Données biométriques :</strong> Si vous activez la fonction de dossier verrouillé, Face ID ou le code de l'appareil est utilisé pour l'authentification. Les données biométriques sont gérées entièrement par les frameworks d'Apple et ne sont ni consultées ni stockées par nous.</p>
+                <p><strong>Données de localisation :</strong> Avec votre permission, nous pouvons accéder aux métadonnées des photos (y compris la localisation) pour afficher les fonctionnalités cartographiques. Ces données restent sur votre appareil.</p>
+                <p><strong>Analyses d'utilisation :</strong> Nous collectons des statistiques d'utilisation anonymes pour améliorer l'expérience de l'application. Ces données ne peuvent pas être utilisées pour vous identifier personnellement.</p>
+                <p><strong>Données publicitaires :</strong> Pour les utilisateurs gratuits, nous utilisons Google AdMob pour afficher des publicités. AdMob peut collecter des identifiants d'appareil et des données d'utilisation conformément à la politique de confidentialité de Google.</p>
+                <p><strong>Informations d'achat :</strong> Les transactions d'abonnement et d'achat sont entièrement traitées par Apple via l'App Store. Nous ne collectons ni ne stockons vos informations de paiement.</p>` },
+            { heading: "Comment nous utilisons vos informations", body: `<ul>
+                <li>Pour fournir et améliorer les fonctionnalités principales de l'application</li>
+                <li>Pour afficher des publicités personnalisées ou contextuelles (niveau gratuit)</li>
+                <li>Pour générer des statistiques d'utilisation anonymes</li>
+                <li>Pour traiter le statut de votre abonnement</li></ul>` },
+            { heading: "Stockage des données et sécurité", body: `<p>Tout le traitement des photos, y compris la détection de doublons par IA, se fait localement sur votre appareil. Nous n'exploitons pas de serveurs stockant vos photos personnelles ou données biométriques. Les données analytiques anonymes sont stockées de manière sécurisée et transmises avec un chiffrement standard.</p>` },
+            { heading: "Services tiers", body: `<p>Nous intégrons les services tiers suivants :</p><ul>
+                <li><strong>Google AdMob :</strong> Publicité pour les utilisateurs gratuits</li>
+                <li><strong>Apple StoreKit :</strong> Achats intégrés et abonnements</li></ul>
+                <p>Chaque service tiers fonctionne selon sa propre politique de confidentialité.</p>` },
+            { heading: "Vos droits", body: `<p>Vous pouvez révoquer l'accès à la photothèque, la localisation ou les autorisations de suivi à tout moment via les paramètres de votre appareil. La suppression de l'application supprime toutes les données stockées localement. Si vous êtes dans l'UE, vous disposez de droits supplémentaires en vertu du RGPD.</p>` },
+            { heading: "Confidentialité des enfants", body: `<p>GalerSwipe ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants.</p>` },
+            { heading: "Modifications de cette politique", body: `<p>Nous pouvons mettre à jour cette Politique de Confidentialité de temps en temps. Les modifications seront publiées sur cette page avec une date d'entrée en vigueur mise à jour.</p>` },
+            { heading: "Contactez-nous", body: `<div class="contact-box"><p>Pour toute question concernant cette Politique de Confidentialité, contactez-nous à :<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    it: {
+        flag: "🇮🇹", label: "Italiano",
+        title: "Informativa sulla Privacy",
+        subtitle: "La tua privacy è importante per noi",
+        effective: "Data di entrata in vigore: Marzo 2025",
+        sections: [
+            { heading: "Introduzione", body: `<p>GalerSwipe ("noi", "nostro") è un'app di gestione della galleria fotografica progettata per aiutarti a organizzare le tue foto in modo rapido e intuitivo. Questa Informativa sulla Privacy spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni quando utilizzi la nostra app.</p>` },
+            { heading: "Informazioni che raccogliamo", body: `
+                <p><strong>Foto e media:</strong> GalerSwipe accede alla libreria foto del tuo dispositivo esclusivamente per visualizzare, organizzare e gestire le tue foto. Le tue foto vengono elaborate interamente sul tuo dispositivo e non vengono mai caricate sui nostri server.</p>
+                <p><strong>Face ID / Dati biometrici:</strong> Se attivi la funzione cartella bloccata, Face ID o il codice del dispositivo viene utilizzato per l'autenticazione. I dati biometrici sono gestiti interamente dai framework di Apple e non vengono né consultati né memorizzati da noi.</p>
+                <p><strong>Dati sulla posizione:</strong> Con il tuo permesso, possiamo accedere ai metadati delle foto (inclusa la posizione) per visualizzare le funzionalità della mappa. Questi dati rimangono sul tuo dispositivo.</p>
+                <p><strong>Analisi dell'utilizzo:</strong> Raccogliamo statistiche di utilizzo anonime per migliorare l'esperienza dell'app. Questi dati non possono essere utilizzati per identificarti personalmente.</p>
+                <p><strong>Dati pubblicitari:</strong> Per gli utenti gratuiti, utilizziamo Google AdMob per visualizzare annunci. AdMob può raccogliere identificatori del dispositivo e dati di utilizzo in conformità con la politica sulla privacy di Google.</p>
+                <p><strong>Informazioni sugli acquisti:</strong> Le transazioni di abbonamento e acquisto sono elaborate interamente da Apple tramite l'App Store. Non raccogliamo né memorizziamo le tue informazioni di pagamento.</p>` },
+            { heading: "Come utilizziamo le tue informazioni", body: `<ul>
+                <li>Per fornire e migliorare le funzionalità principali dell'app</li>
+                <li>Per visualizzare annunci personalizzati o contestuali (livello gratuito)</li>
+                <li>Per generare statistiche di utilizzo anonime</li>
+                <li>Per elaborare lo stato del tuo abbonamento</li></ul>` },
+            { heading: "Archiviazione dati e sicurezza", body: `<p>Tutta l'elaborazione delle foto, incluso il rilevamento dei duplicati basato su IA, avviene localmente sul tuo dispositivo. Non gestiamo server che memorizzano le tue foto personali o dati biometrici. I dati analitici anonimi vengono archiviati in modo sicuro e trasmessi con crittografia standard.</p>` },
+            { heading: "Servizi di terze parti", body: `<p>Integriamo i seguenti servizi di terze parti:</p><ul>
+                <li><strong>Google AdMob:</strong> Pubblicità per utenti gratuiti</li>
+                <li><strong>Apple StoreKit:</strong> Acquisti in-app e abbonamenti</li></ul>
+                <p>Ogni servizio di terze parti opera secondo la propria informativa sulla privacy.</p>` },
+            { heading: "I tuoi diritti", body: `<p>Puoi revocare l'accesso alla libreria foto, alla posizione o le autorizzazioni di tracciamento in qualsiasi momento tramite le impostazioni del tuo dispositivo. L'eliminazione dell'app rimuove tutti i dati memorizzati localmente. Se ti trovi nell'UE, hai diritti aggiuntivi ai sensi del GDPR.</p>` },
+            { heading: "Privacy dei minori", body: `<p>GalerSwipe non è destinato a bambini di età inferiore ai 13 anni. Non raccogliamo consapevolmente informazioni personali dai bambini.</p>` },
+            { heading: "Modifiche a questa politica", body: `<p>Potremmo aggiornare questa Informativa sulla Privacy di tanto in tanto. Eventuali modifiche saranno pubblicate su questa pagina con una data di entrata in vigore aggiornata.</p>` },
+            { heading: "Contattaci", body: `<div class="contact-box"><p>Per qualsiasi domanda su questa Informativa sulla Privacy, contattaci a:<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    hi: {
+        flag: "🇮🇳", label: "हिन्दी",
+        title: "गोपनीयता नीति",
+        subtitle: "आपकी गोपनीयता हमारे लिए महत्वपूर्ण है",
+        effective: "प्रभावी तिथि: मार्च 2025",
+        sections: [
+            { heading: "परिचय", body: `<p>GalerSwipe ("हम", "हमारा") एक फोटो गैलरी प्रबंधन ऐप है जो आपकी तस्वीरों को तेजी से और सहज रूप से व्यवस्थित करने में आपकी मदद करने के लिए डिज़ाइन किया गया है। यह गोपनीयता नीति बताती है कि हम आपके ऐप का उपयोग करते समय आपकी जानकारी कैसे एकत्र, उपयोग और सुरक्षित करते हैं।</p>` },
+            { heading: "हम कौन सी जानकारी एकत्र करते हैं", body: `
+                <p><strong>फ़ोटो और मीडिया:</strong> GalerSwipe आपकी तस्वीरों को प्रदर्शित, व्यवस्थित और प्रबंधित करने के लिए आपके डिवाइस की फोटो लाइब्रेरी तक पहुंचता है। आपकी तस्वीरें पूरी तरह से आपके डिवाइस पर संसाधित होती हैं और कभी भी हमारे सर्वर पर अपलोड नहीं की जातीं।</p>
+                <p><strong>Face ID / बायोमेट्रिक डेटा:</strong> यदि आप लॉक फ़ोल्डर सुविधा सक्षम करते हैं, तो प्रमाणीकरण के लिए Face ID या डिवाइस पासकोड का उपयोग किया जाता है। बायोमेट्रिक डेटा पूरी तरह से Apple के फ्रेमवर्क द्वारा प्रबंधित किया जाता है और हमारे द्वारा न तो एक्सेस किया जाता है और न ही संग्रहीत किया जाता है।</p>
+                <p><strong>स्थान डेटा:</strong> आपकी अनुमति से, हम मानचित्र-आधारित सुविधाओं को प्रदर्शित करने के लिए फोटो मेटाडेटा (स्थान सहित) तक पहुंच सकते हैं। यह डेटा आपके डिवाइस पर रहता है।</p>
+                <p><strong>उपयोग विश्लेषण:</strong> हम ऐप अनुभव को बेहतर बनाने के लिए गुमनाम उपयोग आंकड़े एकत्र करते हैं। इस डेटा का उपयोग आपकी व्यक्तिगत पहचान के लिए नहीं किया जा सकता।</p>
+                <p><strong>विज्ञापन डेटा:</strong> मुफ्त उपयोगकर्ताओं के लिए, हम विज्ञापन प्रदर्शित करने के लिए Google AdMob का उपयोग करते हैं। AdMob Google की गोपनीयता नीति के अनुसार डिवाइस पहचानकर्ता और उपयोग डेटा एकत्र कर सकता है।</p>
+                <p><strong>खरीद जानकारी:</strong> सदस्यता और खरीद लेनदेन पूरी तरह से Apple द्वारा App Store के माध्यम से संसाधित किए जाते हैं। हम आपकी भुगतान जानकारी एकत्र या संग्रहीत नहीं करते हैं।</p>` },
+            { heading: "हम आपकी जानकारी का उपयोग कैसे करते हैं", body: `<ul>
+                <li>ऐप की मुख्य कार्यक्षमता प्रदान करने और सुधारने के लिए</li>
+                <li>व्यक्तिगत या प्रासंगिक विज्ञापन प्रदर्शित करने के लिए (मुफ्त स्तर)</li>
+                <li>ऐप सुधार के लिए गुमनाम उपयोग आंकड़े तैयार करने के लिए</li>
+                <li>आपकी सदस्यता स्थिति को संसाधित करने के लिए</li></ul>` },
+            { heading: "डेटा संग्रहण और सुरक्षा", body: `<p>AI-संचालित डुप्लिकेट पहचान सहित सभी फोटो प्रोसेसिंग आपके डिवाइस पर स्थानीय रूप से होती है। हम ऐसे सर्वर नहीं चलाते जो आपकी व्यक्तिगत तस्वीरें या बायोमेट्रिक डेटा संग्रहीत करते हों।</p>` },
+            { heading: "तृतीय-पक्ष सेवाएं", body: `<p>हम निम्नलिखित तृतीय-पक्ष सेवाओं को एकीकृत करते हैं:</p><ul>
+                <li><strong>Google AdMob:</strong> मुफ्त उपयोगकर्ताओं के लिए विज्ञापन</li>
+                <li><strong>Apple StoreKit:</strong> इन-ऐप खरीदारी और सदस्यता</li></ul>` },
+            { heading: "आपके अधिकार", body: `<p>आप किसी भी समय अपने डिवाइस की सेटिंग्स के माध्यम से फोटो लाइब्रेरी एक्सेस, स्थान एक्सेस या ट्रैकिंग अनुमतियों को रद्द कर सकते हैं। ऐप हटाने से सभी स्थानीय रूप से संग्रहीत डेटा हटा दिया जाता है।</p>` },
+            { heading: "बच्चों की गोपनीयता", body: `<p>GalerSwipe 13 वर्ष से कम उम्र के बच्चों के लिए नहीं है। हम जानबूझकर बच्चों से व्यक्तिगत जानकारी एकत्र नहीं करते हैं।</p>` },
+            { heading: "इस नीति में परिवर्तन", body: `<p>हम समय-समय पर इस गोपनीयता नीति को अपडेट कर सकते हैं। कोई भी परिवर्तन अपडेट की गई प्रभावी तिथि के साथ इस पृष्ठ पर प्रकाशित किया जाएगा।</p>` },
+            { heading: "संपर्क करें", body: `<div class="contact-box"><p>इस गोपनीयता नीति के बारे में कोई प्रश्न होने पर, कृपया हमसे संपर्क करें:<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    },
+    zh: {
+        flag: "🇨🇳", label: "中文",
+        title: "隐私政策",
+        subtitle: "您的隐私对我们很重要",
+        effective: "生效日期：2025年3月",
+        sections: [
+            { heading: "简介", body: `<p>GalerSwipe（"我们"）是一款照片库管理应用程序，旨在帮助您快速直观地整理照片。本隐私政策说明了我们在您使用我们的应用时如何收集、使用和保护您的信息。</p>` },
+            { heading: "我们收集的信息", body: `
+                <p><strong>照片和媒体：</strong>GalerSwipe 访问您设备的照片库，仅用于显示、整理和管理您的照片。您的照片完全在您的设备上处理，绝不会上传到我们的服务器。</p>
+                <p><strong>Face ID / 生物识别数据：</strong>如果您启用锁定文件夹功能，将使用 Face ID 或设备密码进行身份验证。生物识别数据完全由 Apple 的框架处理，我们不会访问或存储。</p>
+                <p><strong>位置数据：</strong>在您授权的情况下，我们可能会访问照片元数据（包括位置）以显示基于地图的功能。这些数据保留在您的设备上。</p>
+                <p><strong>使用分析：</strong>我们收集匿名使用统计数据以改善应用体验。这些数据无法用于识别您的个人身份。</p>
+                <p><strong>广告数据：</strong>对于免费用户，我们使用 Google AdMob 展示广告。AdMob 可能会根据 Google 的隐私政策收集设备标识符和使用数据。</p>
+                <p><strong>购买信息：</strong>订阅和购买交易完全由 Apple 通过 App Store 处理。我们不收集或存储您的付款信息。</p>` },
+            { heading: "我们如何使用您的信息", body: `<ul>
+                <li>提供和改善应用核心功能</li>
+                <li>展示个性化或上下文相关的广告（免费层级）</li>
+                <li>生成匿名使用统计数据以改进应用</li>
+                <li>处理您的订阅状态</li></ul>` },
+            { heading: "数据存储与安全", body: `<p>所有照片处理，包括 AI 驱动的重复检测，均在您的设备上本地进行。我们不运营存储您个人照片或生物识别数据的服务器。任何匿名分析数据都使用行业标准加密安全存储和传输。</p>` },
+            { heading: "第三方服务", body: `<p>我们整合了以下第三方服务：</p><ul>
+                <li><strong>Google AdMob：</strong>为免费用户提供广告</li>
+                <li><strong>Apple StoreKit：</strong>应用内购买和订阅</li></ul>
+                <p>每项第三方服务均按照其自身的隐私政策运营。</p>` },
+            { heading: "您的权利", body: `<p>您可以随时通过设备设置撤销照片库访问、位置访问或跟踪权限。删除应用将移除所有本地存储的数据。如果您位于欧盟，您享有 GDPR 下的额外权利。</p>` },
+            { heading: "儿童隐私", body: `<p>GalerSwipe 不面向 13 岁以下的儿童。我们不会故意收集儿童的个人信息。</p>` },
+            { heading: "本政策的变更", body: `<p>我们可能会不时更新本隐私政策。任何更改将在本页面上发布，并附有更新的生效日期。</p>` },
+            { heading: "联系我们", body: `<div class="contact-box"><p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：<br><a href="mailto:galerswipe@gmail.com">galerswipe@gmail.com</a></p></div>` }
+        ]
+    }
+};
+
+let currentLang = 'en';
+
+function renderLangSwitcher() {
+    const switcher = document.getElementById('langSwitcher');
+    switcher.innerHTML = Object.entries(POLICIES).map(([code, p]) =>
+        `<button class="lang-btn ${code === currentLang ? 'active' : ''}" onclick="switchLang('${code}')">${p.flag} ${p.label}</button>`
+    ).join('');
+}
+
+function switchLang(lang) {
+    currentLang = lang;
+    const p = POLICIES[lang];
+    
+    document.getElementById('page-title').textContent = p.title;
+    document.getElementById('page-subtitle').textContent = p.subtitle;
+    document.documentElement.lang = lang;
+    
+    if (lang === 'ar') {
+        document.documentElement.dir = 'rtl';
+    } else {
+        document.documentElement.dir = 'ltr';
+    }
+    
+    const content = document.getElementById('policyContent');
+    content.innerHTML = `<div class="effective-date">${p.effective}</div>` +
+        p.sections.map(s => `<h2>${s.heading}</h2>${s.body}`).join('');
+    
+    renderLangSwitcher();
+}
+
+// Initialize
+renderLangSwitcher();
+switchLang('en');
+</script>
+</body>
+</html>
