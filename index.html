@@ -1399,3 +1399,12 @@ switchLang('en');
 </html>
 
 <script>for(const k in POLICIES){const p=POLICIES[k];p.effective='Last Updated: September 24, 2026 | Effective Date: September 24, 2026';p.sections.splice(1,0,{heading:'Current App Disclosures',body:'<h3>On-device photo processing</h3><p>GalerSwipe groups similar-photo candidates on your device using capture metadata such as capture time and photo location. It does not use AI image recognition or upload your photos. You review every group before choosing what to delete.</p>'});}for(const k in POLICIES){POLICIES[k].sections[1].body+='<h3>Maps and locations</h3><p>Photo detail maps use Apple MapKit. GalerSwipe does not send GPS coordinates to Google.</p><h3>Advertising and consent</h3><p>Free users may see clearly labeled native ads in Swipe. Premium users do not see ads. Consent tools and App Tracking Transparency are used before personalized tracking where required.</p><h3>Purchases</h3><p>Premium subscriptions are processed by Apple through StoreKit. GalerSwipe does not offer donation or tip purchases that provide no digital content.</p><h3>Locked Folder</h3><p>Locked Folder uses device authentication to protect selected content locally; it is not a backup. Keep your own photo-library backup.</p>';}switchLang(currentLang);</script>
+
+<script>
+(function(){
+const en="<h3>Advertising SDK data</h3><p>Google&#39;s advertising SDK may process device identifiers, advertising data, product interaction, coarse location, and diagnostic data, including crash, performance, and other diagnostic data, for advertising, measurement, analytics, and app reliability. The App Store privacy label reflects these SDK disclosures. This does not send precise photo GPS coordinates to Google.</p>";
+const tr="<h3>Reklam SDK verileri</h3><p>Google reklam SDK&#39;sı; reklam, ölçüm, analitik ve uygulama güvenilirliği için cihaz tanımlayıcıları, reklam verisi, ürün etkileşimi, yaklaşık konum ve tanılama verilerini, çökme, performans ve diğer tanılama verileri dahil, işleyebilir. App Store gizlilik etiketi bu SDK beyanlarını yansıtır. Bu durum, fotoğraflarınıza gömülü hassas GPS koordinatlarının Google&#39;a gönderildiği anlamına gelmez.</p>";
+for(const k in POLICIES){POLICIES[k].sections[1].body+=k==="tr"?tr:en;}
+switchLang(currentLang);
+})();
+</script>
